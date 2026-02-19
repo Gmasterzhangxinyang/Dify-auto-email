@@ -1,90 +1,97 @@
-Email Routing Workflow – Integration Guide
+# Email Routing Workflow – Integration Guide
 
-This workflow can be reused in your own system.
-You only need to replace four parts.
+This workflow can be reused in your own system.  
+To adapt it, modify the following four parts.
 
-1. Trigger – Connect Your Email System
+---
 
-Current: Webhook trigger.
+## 1) Trigger – Connect Your Email System
 
-You should:
+The current workflow uses a webhook trigger.
 
-Connect Gmail / Outlook / internal mail gateway
+Replace it with your own email source:
 
-Push email payload to the Dify webhook
+- Gmail / Outlook webhook
+- Internal SMTP gateway
+- Helpdesk email ingestion
+- Any system that can send an HTTP request
 
-Include subject, sender, body, message_id
+Ensure the payload includes:
 
-No routing logic here. Just forward email data.
+- `subject`
+- `sender`
+- `body`
+- `message_id`
 
-2. Code Node – Customize Cleaning
+The trigger should only forward structured email data.  
+Do not add routing logic here.
 
-Current: basic email cleaning.
+---
 
-You should:
+## 2) Code Node – Customize Email Cleaning
 
-Remove your company’s signatures
+Update the cleaning logic to match your environment:
 
-Strip system footers / unsubscribe blocks
+- Remove internal signatures
+- Strip unsubscribe links
+- Remove forwarded thread history
+- Normalize email content
 
-Normalize thread history
+This node should only preprocess text.  
+Do not add classification logic here.
 
-This node should only clean text.
-No classification logic.
+---
 
-3. Classifier – Define Your Own Categories
+## 3) Classifier – Define Your Own Categories
 
-Replace the default categories with your own:
+Replace the default categories with your internal routing model.
 
 Example:
 
 support
-
 billing
-
 security
-
 sales
-
 other
 
-Keep the category set fixed.
-The model must choose from these only.
 
-4. HTTP Node – Connect to Your System
+Keep the category set fixed.  
+The model must select from predefined values only.
 
-Current: calls Front API.
+---
 
-You should replace this with:
+## 4) HTTP Node – Connect to Your System
 
-Your ticketing system API
+Replace the existing HTTP integration with your own:
 
-Your CRM
+- Ticketing system API
+- CRM API
+- Slack / internal notifications
+- Custom Dify plugin
 
-Slack / internal tool
+This node is responsible for executing the routing decision.
 
-Or a custom Dify plugin
+---
 
-This is where routing actually happens.
+## Suggested Development Timeline
 
-Suggested Timeline
+- **Week 1**: Connect trigger + implement cleaning + define categories  
+- **Week 2**: Integrate HTTP output + enable controlled routing  
+- **Week 3**: Tune thresholds and monitor misroutes  
 
-Week 1: connect trigger + cleaning + categories
+Most teams can deploy a stable version within 2–3 weeks.
 
-Week 2: integrate HTTP + enable routing
+---
 
-Week 3: tune thresholds + monitor misroutes
+## What You Do NOT Need to Change
 
-Most teams can ship a stable version in 2–3 weeks.
+- Overall workflow structure  
+- Conditional routing branches  
+- Verification logic  
 
-What Stays the Same
+Only adapt:
 
-You do not need to change:
-
-Overall workflow structure
-
-Verification logic
-
-Conditional routing branches
-
-Just adapt trigger, cleaning, categories, and output.
+1. Trigger  
+2. Cleaning  
+3. Categories  
+4. Output integration 
