@@ -1,0 +1,1674 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: trigger suppport (en)
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.2.8@aae2be0913b8c6f0b80cff58e08d7a8b4c214569b41778413fcaea204561ff16
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables:
+  - description: ''
+    id: fbd7a07e-5107-4e9f-a504-3a7a43465336
+    name: tag_unknown
+    selector:
+    - env
+    - tag_unknown
+    value: '****'
+    value_type: string
+  - description: ''
+    id: cd755bb0-747f-4a73-ab7d-06694b491e43
+    name: tag_account
+    selector:
+    - env
+    - tag_account
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 4d85968b-36ae-4e4e-930c-e95d2df1884a
+    name: tag_refund
+    selector:
+    - env
+    - tag_refund
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 9909f485-5bf9-41fa-9887-dca2e9f6934b
+    name: tag_tech_VIP
+    selector:
+    - env
+    - tag_tech_VIP
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 1cbaa535-47d7-4692-8fee-3d9218a60d7b
+    name: tag_security
+    selector:
+    - env
+    - tag_security
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 2a656851-d9f1-4fb2-bed0-e38f26349a23
+    name: tag_joinus
+    selector:
+    - env
+    - tag_joinus
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 1cefd425-88cb-427c-b052-a07e88009d7e
+    name: tag_market
+    selector:
+    - env
+    - tag_market
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 11a72901-2555-4d1b-a0b8-4eeba5936026
+    name: tag_edu
+    selector:
+    - env
+    - tag_edu
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 88fbd0e6-7cc5-4460-9547-5ebfbba9e8bf
+    name: tag_business
+    selector:
+    - env
+    - tag_business
+    value: '****'
+    value_type: string
+  - description: ''
+    id: 6dd39675-da7f-409e-a1dd-a764cbc38fcd
+    name: tag_ads
+    selector:
+    - env
+    - tag_ads
+    value: '****'
+    value_type: string
+  - description: ''
+    id: a2c19c3c-6877-486a-b383-d2c99b3f8a65
+    name: tag_tech
+    selector:
+    - env
+    - tag_tech
+    value: '****'
+    value_type: string
+  - description: ''
+    id: d58ddb2d-b923-4a4c-97d6-dd5bdacf349b
+    name: API_token
+    selector:
+    - env
+    - API_token
+    value: '****'
+    value_type: string
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: trigger-webhook
+        targetType: code
+      id: 1764120914547-source-1764497794444-target
+      selected: false
+      source: '1764120914547'
+      sourceHandle: source
+      target: '1764497794444'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: question-classifier
+      id: 1764497794444-source-1764499294584-target
+      source: '1764497794444'
+      sourceHandle: source
+      target: '1764499294584'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-2-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '2'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1764499448453-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1764499448453'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1764499474319-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1764499474319'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1764499463066-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1764499463066'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1764928738677-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1764928738677'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1765258920220-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1765258920220'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1765259090482-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1765259090482'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1765262785198-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1765262785198'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1764499294584-1765263808559-1765438770191-target
+      source: '1764499294584'
+      sourceHandle: '1765263808559'
+      target: '1765438770191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-true-17652618907010-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: 'true'
+      target: '17652618907010'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-e4b0fba6-1854-4be6-b08f-1ee22cf78aa6-1764499972450-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: e4b0fba6-1854-4be6-b08f-1ee22cf78aa6
+      target: '1764499972450'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-8db7e4cb-6b14-49f0-9eb4-3dc0e58077c9-17649293203800-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: 8db7e4cb-6b14-49f0-9eb4-3dc0e58077c9
+      target: '17649293203800'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-0f0f9639-a8b2-40a5-b95f-d7c1d8f61c0e-17649293208130-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: 0f0f9639-a8b2-40a5-b95f-d7c1d8f61c0e
+      target: '17649293208130'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-f5db8e03-2323-4de9-ba6a-31ae0d4e9bae-17649293201600-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: f5db8e03-2323-4de9-ba6a-31ae0d4e9bae
+      target: '17649293201600'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-cb3e12e9-8784-4d12-963e-c7f4404b720d-17649293173430-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: cb3e12e9-8784-4d12-963e-c7f4404b720d
+      target: '17649293173430'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-993edf9e-effa-4ba6-8004-cdfdaf733f1f-17649293198670-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: 993edf9e-effa-4ba6-8004-cdfdaf733f1f
+      target: '17649293198670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-a81be247-4722-48a1-ac79-86ce224522ae-17649303212450-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: a81be247-4722-48a1-ac79-86ce224522ae
+      target: '17649303212450'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-947a40d9-df77-4785-8631-66016a474585-17652629295670-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: 947a40d9-df77-4785-8631-66016a474585
+      target: '17652629295670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1765443486699-fb1a2dc7-0143-4673-aa79-a4d70d58da8e-17652640059760-target
+      selected: false
+      source: '1765443486699'
+      sourceHandle: fb1a2dc7-0143-4673-aa79-a4d70d58da8e
+      target: '17652640059760'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: if-else
+      id: 1765438770191-source-1768982102336-target
+      source: '1765438770191'
+      sourceHandle: source
+      target: '1768982102336'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1768982102336-true-17652640092090-target
+      source: '1768982102336'
+      sourceHandle: 'true'
+      target: '17652640092090'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1768982102336-false-1765443486699-target
+      selected: false
+      source: '1768982102336'
+      sourceHandle: 'false'
+      target: '1765443486699'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        async_mode: true
+        body:
+        - name: conversation
+          required: true
+          type: object
+        - name: target
+          required: true
+          type: object
+        - name: type
+          required: false
+          type: string
+        content_type: application/json
+        headers: []
+        method: POST
+        params: []
+        response_body: ''
+        selected: false
+        status_code: 200
+        title: Webhook Trigger
+        type: trigger-webhook
+        variables:
+        - label: raw
+          required: true
+          value_selector: []
+          value_type: object
+          variable: _webhook_raw
+        - label: body
+          required: true
+          value_selector: []
+          value_type: object
+          variable: conversation
+        - label: body
+          required: true
+          value_selector: []
+          value_type: object
+          variable: target
+        - label: body
+          required: false
+          value_selector: []
+          value_type: string
+          variable: type
+        webhook_debug_url: ''
+        webhook_url: ''
+      height: 130
+      id: '1764120914547'
+      position:
+        x: -1035.9275827039373
+        y: 1387.2210534885803
+      positionAbsolute:
+        x: -1035.9275827039373
+        y: 1387.2210534885803
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import re\n\nUNSUB_TEXT = \"fill in your own\"\n\ndef strip_system_unsub_tail(text:\
+          \ str) -> str:\n    if not text:›\n        return \"\"\n\n    # 1) Hard\
+          \ cut by the fixed unsubscribe notice (case-insensitive)\n    m = re.search(re.escape(UNSUB_TEXT),\
+          \ text, flags=re.IGNORECASE)\n    if m:\n        text = text[:m.start()]\n\
+          \n    # 2) Also cut by the email address as a fallback (in case the sentence\
+          \ changes slightly)\n    m2 = re.search(r\"your own\", text, flags=re.IGNORECASE)\n\
+          \    if m2:\n        text = text[:m2.start()]\n\n    # 3) Clean trailing\
+          \ junk (common: a lone \")\" before the notice)\n    text = text.rstrip()\n\
+          \    text = re.sub(r\"\\n\\)\\s*$\", \"\", text)\n\n    # 4) Trim trailing\
+          \ empty lines\n    while text.endswith(\"\\n\\n\"):\n        text = text[:-1]\n\
+          \n    return text.strip()\n\ndef main(conversation: dict, target: dict):\n\
+          \n    msg = target.get(\"data\", {}) or {}\n\n    subject = msg.get(\"subject\"\
+          , \"\") or \"\"\n    text = msg.get(\"text\", \"\") or \"\"\n    html_body\
+          \ = msg.get(\"body\", \"\") or \"\"\n\n    from_email = \"\"\n    from_name\
+          \ = \"\"\n    for r in msg.get(\"recipients\", []) or []:\n        if r.get(\"\
+          role\") == \"from\":\n            from_email = r.get(\"handle\", \"\") or\
+          \ \"\"\n            from_name = r.get(\"name\", \"\") or \"\"\n        \
+          \    break\n\n    #  remove the fixed trailing unsubscribe notice from the\
+          \ body text\n    text_clean = strip_system_unsub_tail(text)\n\n    email_full\
+          \ = f\"Subject: {subject}\\nFrom: {from_name} <{from_email}>\\n\\n{text_clean}\"\
+          \n\n    return {\n        \"email_full\": email_full,\n        \"subject\"\
+          : subject,\n        \"text\": text_clean,\n        \"html_body\": html_body,\n\
+          \        \"from_email\": from_email,\n        \"from_name\": from_name,\n\
+          \        \"conversation_id\": conversation.get(\"id\"),\n        \"message_id\"\
+          : msg.get(\"id\")\n    }\n"
+        code_language: python3
+        outputs:
+          conversation_id:
+            children: null
+            type: string
+          email_full:
+            children: null
+            type: string
+          from_email:
+            children: null
+            type: string
+          from_name:
+            children: null
+            type: string
+          html_body:
+            children: null
+            type: string
+          message_id:
+            children: null
+            type: string
+          subject:
+            children: null
+            type: string
+          text:
+            children: null
+            type: string
+        selected: false
+        title: Code
+        type: code
+        variables:
+        - value_selector:
+          - '1764120914547'
+          - conversation
+          value_type: object
+          variable: conversation
+        - value_selector:
+          - '1764120914547'
+          - target
+          value_type: object
+          variable: target
+      height: 52
+      id: '1764497794444'
+      position:
+        x: -600.2076462133458
+        y: 1408.2210534885803
+      positionAbsolute:
+        x: -600.2076462133458
+        y: 1408.2210534885803
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        classes:
+        - id: '1'
+          name: Class1 prompt
+        - id: '2'
+          name: Class2 prompt
+        - id: '1764499448453'
+          name: Class3 prompt
+        - id: '1764499474319'
+          name: Class4 prompt
+        - id: '1764499463066'
+          name: Class5 prompt
+        - id: '1764928738677'
+          name: Class6 prompt
+        - id: '1765258920220'
+          name: Class7 prompt
+        - id: '1765259090482'
+          name: Class8 prompt
+        - id: '1765262785198'
+          name: Class9 prompt
+        - id: '1765263808559'
+          name: Class10 prompt
+        instructions: ''
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o
+          provider: langgenius/openai/openai
+        query_variable_selector:
+        - '1764497794444'
+        - email_full
+        selected: false
+        title: Question Classifier
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 474
+      id: '1764499294584'
+      position:
+        x: -217.03538967748892
+        y: 1257.847106703814
+      positionAbsolute:
+        x: -217.03538967748892
+        y: 1257.847106703814
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_tech#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP tech
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '1764499972450'
+      position:
+        x: 1388.5730215198835
+        y: 988.2379469979733
+      positionAbsolute:
+        x: 1388.5730215198835
+        y: 988.2379469979733
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_ads#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP Ads
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17649293173430'
+      position:
+        x: 1395.1511307817277
+        y: 1712.6009208531473
+      positionAbsolute:
+        x: 1395.1511307817277
+        y: 1712.6009208531473
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_joinus#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP Joinus
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17649293198670'
+      position:
+        x: 1388.5730215198835
+        y: 1888.6555592650834
+      positionAbsolute:
+        x: 1388.5730215198835
+        y: 1888.6555592650834
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_market#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP MARKET
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17649293201600'
+      position:
+        x: 1395.1511307817277
+        y: 1527.3217562722991
+      positionAbsolute:
+        x: 1395.1511307817277
+        y: 1527.3217562722991
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_edu#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP EDU
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17649293203800'
+      position:
+        x: 1395.1511307817277
+        y: 1173.5397709747851
+      positionAbsolute:
+        x: 1395.1511307817277
+        y: 1173.5397709747851
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_business#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP Business
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17649293208130'
+      position:
+        x: 1395.1511307817277
+        y: 1346.3979262829762
+      positionAbsolute:
+        x: 1395.1511307817277
+        y: 1346.3979262829762
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_security#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP Security
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17649303212450'
+      position:
+        x: 1388.5730215198835
+        y: 2069.549559426392
+      positionAbsolute:
+        x: 1388.5730215198835
+        y: 2069.549559426392
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_tech_VIP#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP tech_VIP
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17652618907010'
+      position:
+        x: 1388.5730215198835
+        y: 808.8225234504162
+      positionAbsolute:
+        x: 1388.5730215198835
+        y: 808.8225234504162
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_refund#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP refund
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17652629295670'
+      position:
+        x: 1388.5730215198835
+        y: 2253.1000287055163
+      positionAbsolute:
+        x: 1388.5730215198835
+        y: 2253.1000287055163
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_account#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP account
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17652640059760'
+      position:
+        x: 1395.1511307817277
+        y: 2429.002923947084
+      positionAbsolute:
+        x: 1395.1511307817277
+        y: 2429.002923947084
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config:
+            api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsic2hhcmVkOioiLCJrYiIsInByaXZhdGU6KiIsInRpbToxMjExMTEzMSJdLCJpYXQiOjE3NjQ5MjQwNDAsImlzcyI6ImZyb250Iiwic3ViIjoiMzAyMGIwZjE2OWQ0NjRkZmMzYTEiLCJqdGkiOiJlYzhhNWRkOTBlOWU3MDA3In0.aIpHKb2FhlDY6z8nT91u-VHWdUdDywX0krhb4rndbEs
+            type: bearer
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: "\n{\n  \"tag_ids\": [\n    \"{{#env.tag_unknown#}}\"\n  ]\n}\n"
+          type: raw-text
+        headers: 'authorization:Bearer {{#env.API_token#}}
+
+          content-type:application/json'
+        method: POST
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP unknown
+        type: http-request
+        url: https://api2.frontapp.com/conversations/{{#1764497794444.conversation_id#}}/tags
+        variables: []
+      height: 171
+      id: '17652640092090'
+      position:
+        x: 808.8252491744877
+        y: 1173.5397709747851
+      positionAbsolute:
+        x: 808.8252491744877
+        y: 1173.5397709747851
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: de2878cb-14fc-447e-afbb-70163680ba7b
+          role: system
+          text: 'You are a JSON generator.
+
+            Return ONLY valid JSON.
+
+            Do NOT include markdown, code fences, explanations, or any extra characters.
+
+            The output MUST be a single JSON object.
+
+            '
+        - id: f7b0fed8-958c-4c6d-81ac-ac97797a6010
+          role: user
+          text: 'Email content:
+
+            {{#1764497794444.email_full#}}
+
+            Proposed category:
+
+            {{#1764499294584.class_name#}}
+
+            Task:
+
+            Decide whether we should block this category assignment.
+
+            Rules:
+
+            Default: allow (pass=true).
+
+            Only block (pass=false) if the email is obviously NOT about the proposed
+            category.
+
+            intent MUST be exactly the proposed category: {{#1764499294584.class_name#}}
+
+            confidence must be a number between 0 and 1.
+
+            Output ONLY JSON, no extra text.
+
+            Return ONLY this JSON format:
+
+            {"pass": true/false, "intent": "{{#1764499294584.class_name#}}", "confidence":
+            0.0-1.0}
+
+            Examples:
+
+            obvious mismatch -> {"pass": false, "intent": "<proposed_category>", "confidence":
+            0.95}
+
+            unclear -> {"pass": true, "intent": "<proposed_category>", "confidence":
+            0.40}
+
+            match -> {"pass": true, "intent": "<proposed_category>", "confidence":
+            0.90}'
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              confidence:
+                maximum: 1
+                minimum: 0
+                type: number
+              intent:
+                type: string
+              pass:
+                type: boolean
+            required:
+            - pass
+            - intent
+            - confidence
+            type: object
+        structured_output_enabled: true
+        title: classifier verification
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1765438770191'
+      position:
+        x: 198.79017024960876
+        y: 1392.7930598584298
+      positionAbsolute:
+        x: 198.79017024960876
+        y: 1392.7930598584298
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: c84d7f83-f73a-402a-9ffe-f12d77136817
+            value: Current Plan
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: 'true'
+          logical_operator: and
+        - case_id: e4b0fba6-1854-4be6-b08f-1ee22cf78aa6
+          conditions:
+          - comparison_operator: contains
+            id: f5623918-298e-4b35-968c-95d85229d294
+            value: sandbox
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: e4b0fba6-1854-4be6-b08f-1ee22cf78aa6
+          logical_operator: and
+        - case_id: 8db7e4cb-6b14-49f0-9eb4-3dc0e58077c9
+          conditions:
+          - comparison_operator: contains
+            id: 53e30d59-4d30-4d54-ae41-e53d468c7e00
+            value: EDU
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: 8db7e4cb-6b14-49f0-9eb4-3dc0e58077c9
+          logical_operator: and
+        - case_id: 0f0f9639-a8b2-40a5-b95f-d7c1d8f61c0e
+          conditions:
+          - comparison_operator: contains
+            id: 78dfbeaf-7854-4a8c-a3ea-84e56a1b73d9
+            value: Price
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: 0f0f9639-a8b2-40a5-b95f-d7c1d8f61c0e
+          logical_operator: and
+        - case_id: f5db8e03-2323-4de9-ba6a-31ae0d4e9bae
+          conditions:
+          - comparison_operator: contains
+            id: 9d8b32bf-a444-47ef-a9aa-4c7e66755a19
+            value: Promotion
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: f5db8e03-2323-4de9-ba6a-31ae0d4e9bae
+          logical_operator: and
+        - case_id: cb3e12e9-8784-4d12-963e-c7f4404b720d
+          conditions:
+          - comparison_operator: contains
+            id: 5c96ac07-c05e-41b8-8dd9-77c5d2dca913
+            value: conferences
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: cb3e12e9-8784-4d12-963e-c7f4404b720d
+          logical_operator: and
+        - case_id: 993edf9e-effa-4ba6-8004-cdfdaf733f1f
+          conditions:
+          - comparison_operator: contains
+            id: d0a0a43c-0912-4b2e-89ab-71dec52cbdca
+            value: Join us
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: 993edf9e-effa-4ba6-8004-cdfdaf733f1f
+          logical_operator: and
+        - case_id: a81be247-4722-48a1-ac79-86ce224522ae
+          conditions:
+          - comparison_operator: contains
+            id: db0b22d0-7ada-48c6-8d19-b246898551db
+            value: Security
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: a81be247-4722-48a1-ac79-86ce224522ae
+          logical_operator: and
+        - case_id: 947a40d9-df77-4785-8631-66016a474585
+          conditions:
+          - comparison_operator: contains
+            id: 7942aae3-d390-4814-988a-3b11eaa46abc
+            value: refunds
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: 947a40d9-df77-4785-8631-66016a474585
+          logical_operator: and
+        - case_id: fb1a2dc7-0143-4673-aa79-a4d70d58da8e
+          conditions:
+          - comparison_operator: contains
+            id: 6eebebb9-ed13-4e1a-b8bf-57adefc51075
+            value: Account
+            varType: string
+            variable_selector:
+            - '1764499294584'
+            - class_name
+          id: fb1a2dc7-0143-4673-aa79-a4d70d58da8e
+          logical_operator: and
+        selected: false
+        title: Category Routing
+        type: if-else
+      height: 556
+      id: '1765443486699'
+      position:
+        x: 817.3055724760701
+        y: 1575.2761637896467
+      positionAbsolute:
+        x: 817.3055724760701
+        y: 1575.2761637896467
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 8ea28811-82f0-4987-b581-1d00a11bb424
+            value: false
+            varType: boolean
+            variable_selector:
+            - '1765438770191'
+            - structured_output
+            - pass
+          - comparison_operator: ≥
+            id: f5a8850f-8141-4c52-ad6f-f79c3a65a942
+            value: '0.85'
+            varType: number
+            variable_selector:
+            - '1765438770191'
+            - structured_output
+            - confidence
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: Strong Reject Check
+        type: if-else
+      height: 150
+      id: '1768982102336'
+      position:
+        x: 485.31924361399876
+        y: 1361.7186119931037
+      positionAbsolute:
+        x: 485.31924361399876
+        y: 1361.7186119931037
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: Dify
+        desc: ''
+        height: 262
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"Architecture:","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"Webhook Trigger","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"  → Preprocess Code (email normalize & cleanup)","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"    → Question Classifier (LLM multi-class)","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"      → Classifier Verification (LLM verify)","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"        → IF (strong reject?)","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"          → Unknown","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"        → ELSE","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"          → IF/ELSE (route by class_name)","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"            → HTTP tag (Front)","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1,"textStyle":"font-size:
+          14px;"}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 382
+      height: 262
+      id: '1768982828182'
+      position:
+        x: -731.7742105050916
+        y: 1543.8590141107254
+      positionAbsolute:
+        x: -731.7742105050916
+        y: 1543.8590141107254
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 382
+    - data:
+        author: Dify
+        desc: ''
+        height: 164
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Webhook
+          Trigger","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Entry
+          point for incoming Front emails.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Only
+          receives conversation and message payloads.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"No
+          logic, no modification, no decision-making here.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 241
+      height: 164
+      id: '1768983015998'
+      position:
+        x: -1026.6593099962683
+        y: 1207.5495776310281
+      positionAbsolute:
+        x: -1026.6593099962683
+        y: 1207.5495776310281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 241
+    - data:
+        author: Dify
+        desc: ''
+        height: 202
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Code
+          – Email Preprocess","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Builds
+          ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"email_full","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          (Subject + From + Cleaned Body).","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Removes
+          system-generated footer content (unsubscribe / hubspot / auto text) from
+          the ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"end
+          of the email body only","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"This
+          prevents noise from affecting classification and verification.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Do
+          not perform any classification or semantic judgment here.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 372
+      height: 202
+      id: '1768983051216'
+      position:
+        x: -699.373373294612
+        y: 1167.663618598697
+      positionAbsolute:
+        x: -699.373373294612
+        y: 1167.663618598697
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 372
+    - data:
+        author: Dify
+        desc: ''
+        height: 195
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Question
+          Classifier","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Selects
+          the ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"most
+          appropriate category","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          from the predefined class list based on ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"email_full","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Must
+          ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"always
+          output one known category","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Do
+          ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"not","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          output ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"unknown","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"This
+          node only selects a category and does not validate correctness.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 330
+      height: 195
+      id: '1768983076665'
+      position:
+        x: -285.7492685658297
+        y: 1030.711025057413
+      positionAbsolute:
+        x: -285.7492685658297
+        y: 1030.711025057413
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 330
+    - data:
+        author: Dify
+        desc: ''
+        height: 189
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Classifier
+          Verification","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Checks
+          whether the proposed category is ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"obviously
+          mismatched","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          with the email content.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Default
+          behavior is to allow (","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"pass=true","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":").","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Only
+          set ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"pass=false","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          when the mismatch is clear and explicit.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"This
+          node must ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"not
+          change the category","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":",
+          only decide whether to block it.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 311
+      height: 189
+      id: '1768983098714'
+      position:
+        x: 141.88630631359877
+        y: 1181.338258856987
+      positionAbsolute:
+        x: 141.88630631359877
+        y: 1181.338258856987
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 311
+    - data:
+        author: Dify
+        desc: ''
+        height: 180
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"IF
+          – Strong Reject Check","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Determines
+          whether the email should be sent to ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"unknown","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"Only
+          route to ","type":"text","version":1},{"detail":0,"format":17,"mode":"normal","style":"","text":"unknown","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"
+          when ","type":"text","version":1},{"detail":0,"format":17,"mode":"normal","style":"","text":"pass=false","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"
+          AND ","type":"text","version":1},{"detail":0,"format":17,"mode":"normal","style":"","text":"confidence
+          >= 0.8","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"If
+          ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"pass=false","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          but confidence is low, continue using the original category.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 269
+      height: 180
+      id: '1768983139864'
+      position:
+        x: 474.08983305514914
+        y: 1167.663618598697
+      positionAbsolute:
+        x: 474.08983305514914
+        y: 1167.663618598697
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 269
+    - data:
+        author: Dify
+        desc: ''
+        height: 141
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Unknown","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Used
+          only for ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"high-confidence,
+          clearly incorrect classifications","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":".","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"This
+          is not a fallback or default category.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Hits
+          on this node should remain rare.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 260
+      height: 141
+      id: '1768983207365'
+      position:
+        x: 794.0385725091835
+        y: 1016.1355887714592
+      positionAbsolute:
+        x: 794.0385725091835
+        y: 1016.1355887714592
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 260
+    - data:
+        author: Dify
+        desc: ''
+        height: 179
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"IF/ELSE
+          – Category Routing","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Routes
+          emails based on ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"class_name","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          using ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"contains","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          matching.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Do
+          not use ","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"equals","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":",
+          as LLM outputs are not guaranteed to be text-identical.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"This
+          node performs deterministic routing only and should not contain semantic
+          logic.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 301
+      height: 179
+      id: '1768983234415'
+      position:
+        x: 787.5084640224293
+        y: 1385.6927928958164
+      positionAbsolute:
+        x: 787.5084640224293
+        y: 1385.6927928958164
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 301
+    - data:
+        author: Dify
+        desc: ''
+        height: 135
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"HTTP
+          – Add Front Tag","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Adds
+          the corresponding Front tag to the conversation based on routing result.","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"This
+          node performs write-only operations and contains no decision logic.","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 289
+      height: 135
+      id: '1768983270797'
+      position:
+        x: 1361.1531546387139
+        y: 659.787890733488
+      positionAbsolute:
+        x: 1361.1531546387139
+        y: 659.787890733488
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 289
+    viewport:
+      x: 595.9362616403679
+      y: -47.377743001437636
+      zoom: 0.2649769726952626
+  rag_pipeline_variables: []
